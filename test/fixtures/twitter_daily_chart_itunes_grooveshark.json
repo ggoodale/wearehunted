@@ -1,0 +1,95 @@
+{
+  "results":
+    [
+        {
+            "artist":"DELOREAN",
+            "track":"Stay close",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Stay close/24993632",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Suckers",
+            "track":"Black Sheep",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Black Sheep/24993649",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"The Tallest Man On Earth",
+            "track":"Burden of Tomorrow",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Burden of Tomorrow/24663169",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Yeasayer",
+            "track":"O.N.E.",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/O.N.E./24578382",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Broken Social Scene",
+            "track":"World Sick",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/World Sick/24554717",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"The National",
+            "track":"Fake Empire",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Fake Empire/48028",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Laura Marling",
+            "track":"Devil's Spoke",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Devil's Spoke/24879369",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"The Bloody Beetroots",
+            "track":"31 Seconds to Die",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/31 Seconds to Die/25003738",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Titus Andronicus",
+            "track":"a more perfect union",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/A More Perfect Union/24833435",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Jedi Mind Tricks",
+            "track":"The Philosophy of Horror",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/The Philosophy Of Horror/872204",
+                "itunes":null
+            }
+        }
+    ]
+}

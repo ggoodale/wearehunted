@@ -1,0 +1,99 @@
+
+{
+    
+    "results":
+
+    [
+        {
+            "artist":"Say Hi",
+            "track":"Oh Oh Oh Oh Oh Oh Oh Oh",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Oh Oh Oh Oh Oh Oh Oh Oh/22791511",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Lionel Richie",
+            "track":"Say You, Say Me",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Say You, Say Me/21875588",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Rupert Holmes",
+            "track":"Pina Colada Song",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Pina colada song/23353398",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Junior Boys",
+            "track":"Dull To Pause",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Dull To Pause/21815380",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Matt & Kim",
+            "track":"Daylight",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Daylight/21999515",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Stereophonics",
+            "track":"Dakota",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Dakota/8818493",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Jon McLaughlin",
+            "track":"Indiana",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Indiana/7352778",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"Debbie Gibson",
+            "track":"Electric Youth",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Electric Youth/700412",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"The Morning Benders",
+            "track":"Wet Cement",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Wet Cement/24535309",
+                "itunes":null
+            }
+        },
+        {
+            "artist":"The Morning Benders",
+            "track":"Excuses",
+            "links":
+            {
+                "grooveshark":"http://listen.grooveshark.com/#/song/Excuses/24535312",
+                "itunes":null
+            }
+        }
+    ]
+}
+

@@ -5,7 +5,10 @@ require "json"
 # jnunemaker's Twitter gem, though simplified greatly due to the simpler API.
 module WeAreHunted
   include HTTParty
-  API_VERSION = '0'.freeze
+  API_VERSION = 0
+  CHART_TYPES = :artists, :singles
+  CHART_PERIODS = 1, 7, 30
+  
   base_uri "wearehunted.com/api"
   format :json
   
@@ -34,14 +37,60 @@ module WeAreHunted
   #  count: The maximum number of tracks that should be returned.
   #
   def self.suggest(options = {})
-    perform_get("/suggest/singles/?#{query_string_from(options)}")["results"]
+    perform_get("/suggest/singles/#{query_string_from(options)}")["results"]
   end
 
+  # Retrieves live chart data for the specified genre and type.
+  #  name: The chart to retrieve.  May be one of:  rock, pop, folk, metal, alternative, electronic, punk, rap-hip-hop, twitter, remix
+  #  type: The type of chart to retrieve.  May be one of: :artists, :singles 
+  #  period: Specify the number of days covered by the chart.  May be one of: 1, 7, 30.
+  #  user: Retrieve a chart created by a specific user.
+  #  count: The maximum number of tracks that should be returned.
+  #  provider: A provider to return urls for.  Multiple values can be passed in as an array. Valid options are: image, youtube, myspace, spotify, grooveshark, last.fm, itunes
+  #  allow_blanks: If true, return results that lack urls for one or more of the specified providers. defaults to false.
+  #
   def self.chart(options = {})
-    perform_get("/suggest/singles", options)
+    chart_path = ""
+    if options[:user]
+      chart_path << "/by/#{options.delete(:user)}/"
+    else
+
+      unless options[:type] && CHART_TYPES.include?(options[:type])
+        raise ArgumentError, ":type must be specified (one of artists, singles) when retrieving charts that aren't user-generated" 
+      end
+      
+      unless options[:period] && CHART_PERIODS.include?(options[:period])
+        raise ArgumentError, ":period must be specified (one of 1, 7, 30) when retrieving charts that aren't user-generated" 
+      end
+
+      if options[:name]
+        chart_path << "/#{options.delete(:name)}"
+      end
+
+      chart_path << "/#{options.delete(:type)}/#{options.delete(:period)}/"
+    end
+
+    perform_get("/chart#{chart_path}#{query_string_from(options)}")["results"]
   end
 
-  def self.artist(options = {})
+  # Retrieves the We Are Hunted id for the specified artist(s).
+  #  artists: One or more artist names to retrieve the id for.
+  # 
+  # Returns: a hash of artist name => artist id pairs
+  #
+  def self.artist(*artists)
+    raise ArgumentError, "Please specify one or more artist names" if artists.empty?
+    
+    if artists.length == 1
+      options = {:text => artists}
+    else 
+      options = {:name => artists}
+    end
+    
+    result = perform_get("/lookup/artist/#{query_string_from(options)}")["results"]
+    
+    # The results don't include the artist names  (sigh), but we know they're returned in alphabetical order.
+    Hash[*artists.sort.zip(result).flatten]
   end
 
   private
@@ -75,7 +124,8 @@ module WeAreHunted
   end
     
   def self.query_string_from(options) # :nodoc:
-    options.inject([]) do |collection, opt|
+    return "" if options.empty?
+    "?" << options.inject([]) do |collection, opt|
       case opt[1]
       when Array
         opt[1].each {|val| collection << "#{opt[0]}=#{val}"}
