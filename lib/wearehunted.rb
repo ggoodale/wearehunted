@@ -37,6 +37,7 @@ module WeAreHunted
   #  count: The maximum number of tracks that should be returned.
   #
   def self.suggest(options = {})
+    options[:text] = URI.escape(options[:text]) if options[:text]
     perform_get("/suggest/singles/#{query_string_from(options)}")["results"]
   end
 
@@ -76,21 +77,18 @@ module WeAreHunted
   # Retrieves the We Are Hunted id for the specified artist(s).
   #  artists: One or more artist names to retrieve the id for.
   # 
-  # Returns: a hash of artist name => artist id pairs
+  # Returns: an array of artist ids
   #
   def self.artist(*artists)
     raise ArgumentError, "Please specify one or more artist names" if artists.empty?
     
-    if artists.length == 1
-      options = {:text => artists}
+    if artists.size == 1
+      options = {:text => artists[0]}
     else 
       options = {:name => artists}
     end
     
-    result = perform_get("/lookup/artist/#{query_string_from(options)}")["results"]
-    
-    # The results don't include the artist names  (sigh), but we know they're returned in alphabetical order.
-    Hash[*artists.sort.zip(result).flatten]
+    perform_get("/lookup/artist/#{query_string_from(options)}")["results"]
   end
 
   private
@@ -128,9 +126,9 @@ module WeAreHunted
     "?" << options.inject([]) do |collection, opt|
       case opt[1]
       when Array
-        opt[1].each {|val| collection << "#{opt[0]}=#{val}"}
+        opt[1].each {|val| collection << "#{opt[0]}=#{URI.escape(val.to_s)}"}
       else
-        collection << "#{opt[0]}=#{opt[1]}"
+        collection << "#{opt[0]}=#{URI.escape(opt[1].to_s)}"
       end
       collection 
     end * '&'
