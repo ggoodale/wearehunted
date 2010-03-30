@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wearehunted}
-  s.version = "0.0.0"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["ggoodale"]
@@ -17,16 +17,12 @@ Gem::Specification.new do |s|
      "README.rdoc"
   ]
   s.files = [
-    ".document",
-     ".gitignore",
+    ".gitignore",
      "LICENSE",
      "README.rdoc",
      "Rakefile",
      "VERSION",
      "lib/wearehunted.rb",
-     "lib/wearehunted/chart.rb",
-     "lib/wearehunted/lookup.rb",
-     "lib/wearehunted/suggest.rb",
      "test/fixtures/artist_shakira.json",
      "test/fixtures/artist_shakira_blog_post.json",
      "test/fixtures/artist_shakira_broken_bells.json",
@@ -39,7 +35,8 @@ Gem::Specification.new do |s|
      "test/fixtures/shakira_suggest_limited.json",
      "test/fixtures/twitter_daily_chart_itunes_grooveshark.json",
      "test/helper.rb",
-     "test/test_wearehunted.rb"
+     "test/test_wearehunted.rb",
+     "wearehunted.gemspec"
   ]
   s.homepage = %q{http://github.com/ggoodale/wearehunted}
   s.rdoc_options = ["--charset=UTF-8"]
