@@ -34,7 +34,7 @@ module WeAreHunted
   #  count: The maximum number of tracks that should be returned.
   #
   def self.suggest(options = {})
-    perform_get("/suggest/singles/?#{query_string_from(options)}")
+    perform_get("/suggest/singles/?#{query_string_from(options)}")["results"]
   end
 
   def self.chart(options = {})
@@ -57,7 +57,6 @@ module WeAreHunted
   
   
   def self.raise_errors(response) # :nodoc:
-    puts response.code.to_i
     case response.code.to_i
     when 400
       raise BadRequest, "(#{response.code}): #{response.message}"
