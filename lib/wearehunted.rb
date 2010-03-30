@@ -24,17 +24,16 @@ module WeAreHunted
   class Unavailable < WeAreHuntedError; end
 
   # Retrieves suggested songs based on either a block of text or specific artist names.
-  #  +:text+: A block of text to search for known artist names.
-  #  +:name+: An artist name to use as a basis for suggestion. Multiple values can be passed in as an array. 
-  #  +:artist+: The We Are Hunted artist IDs to use as a basis for suggestion. Multiple values can be passed in as an array. See WeAreHunted::artist
-  #  +:emerging+: If +true+, include emerging artists in the result set.  defaults to +false+.
-  #  +:provider+: A provider to return urls for.  Multiple values can be passed in as an array. Valid options are +image+, +youtube+, +myspace+, +spotify+, +grooveshark+, +last.fm+, +itunes+
-  #  +:allow_blanks+: If +true+, return results that lack urls for one or more of the specified +providers+. defaults to +false+.
-  #  +:include_seeds+: If +true+, include the artists specified as seeds in the result set. defaults to +false+. 
-  #  +:count+: The maximum number of tracks that should be returned.
+  #  text: A block of text to search for known artist names.
+  #  name: An artist name to use as a basis for suggestion. Multiple values can be passed in as an array. 
+  #  artist: The We Are Hunted artist IDs to use as a basis for suggestion. Multiple values can be passed in as an array. See WeAreHunted::artist
+  #  emerging: If true, include emerging artists in the result set.  defaults to false.
+  #  provider: A provider to return urls for.  Multiple values can be passed in as an array. Valid options are: image, youtube, myspace, spotify, grooveshark, last.fm, itunes
+  #  allow_blanks: If true, return results that lack urls for one or more of the specified +providers+. defaults to false.
+  #  include_seeds: If true, include the artists specified as seeds in the result set. defaults to false. 
+  #  count: The maximum number of tracks that should be returned.
   #
   def self.suggest(options = {})
-    puts "/suggest/singles/?#{query_string_from(options)}"
     perform_get("/suggest/singles/?#{query_string_from(options)}")
   end
 
