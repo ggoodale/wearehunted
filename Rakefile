@@ -5,11 +5,13 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "wearehunted"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{A Ruby wrapper around the We Are Hunted API.}
+    gem.description = %Q{A Ruby wrapper around the We Are Hunted API.  See http://wearehunted.com/api for more information.}
     gem.email = "ggoodale@gmail.com"
     gem.homepage = "http://github.com/ggoodale/wearehunted"
     gem.authors = ["ggoodale"]
+    gem.add_dependency "httparty", ">= 0"
+    gem.add_dependency "json", ">= 0"
     gem.add_development_dependency "shoulda", ">= 0"
     gem.add_development_dependency "fakeweb", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
