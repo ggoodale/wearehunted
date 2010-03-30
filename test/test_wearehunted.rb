@@ -1,7 +1,7 @@
 require 'helper'
 
 class TestWearehunted < Test::Unit::TestCase
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
+  should "implement something" do
+    assert_not_nil WeAreHunted.suggest(:name => "Shakira")
   end
 end

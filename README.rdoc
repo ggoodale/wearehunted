@@ -1,6 +1,6 @@
 = wearehunted
 
-Description goes here.
+A ruby wrapper around the We Are Hunted API. 
 
 == Note on Patches/Pull Requests
  
@@ -14,4 +14,4 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2010 ggoodale. See LICENSE for details.
+Copyright (c) 2010 Grant Goodale (grant@moreblinktag.com). See LICENSE for details.
